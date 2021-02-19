@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-import { useDispatch } from "react-redux";
-import { decrease2 } from "../redux/action";
+
+import { decrease2 } from "../context/action";
+import { CounterContext } from "../context/CounterProvider";
 
 const Decrease2 = () => {
-  const dispatch = useDispatch();
+  const { counterDispatch } = useContext(CounterContext);
   return (
     <>
-      <button onClick={() => dispatch(decrease2())}>decrease counter2</button>
+      <button onClick={() => counterDispatch(decrease2())}>decrease counter2</button>
     </>
   );
 };

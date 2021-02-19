@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./redux/configureStore";
 
+import CounterProvider from "./context/CounterProvider";
 import Counter from "./container/Counter";
+
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <CounterProvider>
       <Counter />
-    </Provider>
+    </CounterProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
