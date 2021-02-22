@@ -1,18 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useContext, memo } from "react";
 
-const Count2 = () => {
-  const counter2 = useSelector((state) => {
-    console.log(state.counter2);
-    return state.counter2;
-  });
-  return (
-    <div className="count">
-      <div className="count__container">
-        <span>counter2 : {counter2}</span>
-      </div>
-    </div>
-  );
-};
+import { CounterContext } from "../context/CounterProvider";
+
+const Count2 = memo(() => {
+  const { counter2 } = useContext(CounterContext);
+  return <span>counter2 : {counter2}</span>;
+});
 
 export default Count2;
