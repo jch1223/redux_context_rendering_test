@@ -37,17 +37,14 @@ const counterReducer = (state = initialState, action) => {
 
 const CounterProvider = (props) => {
   const [counter, counterDispatch] = useReducer(counterReducer, initialState);
-
-  const resultcounter = useMemo(() => {
-    return counter;
-  }, [counter]);
+  const { counter1, counter2 } = counter;
 
   return (
     <CounterContext.Provider
       value={{
-        counter1: resultcounter.counter1,
-        counter2: resultcounter.counter2,
-        counterDispatch,
+        counter1: counter1,
+        counter2: counter2,
+        counterDispatch: counterDispatch,
       }}
     >
       <>{props.children}</>
