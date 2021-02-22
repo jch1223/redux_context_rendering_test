@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Count1 from "../components/Count1";
 import Count2 from "../components/Count2";

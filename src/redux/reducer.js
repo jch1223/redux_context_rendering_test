@@ -3,7 +3,7 @@ var defaultState = {
   counter2: 0,
 };
 
-export default (state = defaultState, action) => {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "INCREASE_COUNTER1":
       return {
@@ -30,3 +30,5 @@ export default (state = defaultState, action) => {
       return state;
   }
 };
+
+export default reducer;
